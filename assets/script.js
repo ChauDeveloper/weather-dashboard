@@ -47,7 +47,7 @@ var formSubmitHandler = function(event) {
       event.preventDefault();
       var city = cityInputEl.value.trim()
       cityInputEl.textContent = city
-      var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=9a5fdca9a71d82a27d3bad8acdad7812";
+      var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=9a5fdca9a71d82a27d3bad8acdad7812";
 
       fetch(apiUrl).then(function(response) {
             if (response.ok) {
@@ -57,14 +57,14 @@ var formSubmitHandler = function(event) {
 
                 
                 var iconEl = document.createElement ("img");
-                iconEl.src = "http://openweathermap.org/img/wn/" + data['weather']["0"]['icon'] + "@2x.png"
+                iconEl.src = "https://openweathermap.org/img/wn/" + data['weather']["0"]['icon'] + "@2x.png"
                 icon.appendChild(iconEl);
 
                 temp.textContent ="Temperature: " + data['main']['temp'] + " °F";
                 wind.textContent = "Wind: " + data['wind']['speed'] + " MPH"; 
                 humidity.textContent = "Humidity: " + data['main']['humidity'] + " %";
               
-                var uvUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data['coord']['lat'] + "&lon=" + data['coord']['lon'] + "&appid=9a5fdca9a71d82a27d3bad8acdad7812"
+                var uvUrl = "httpss://api.openweathermap.org/data/2.5/onecall?lat=" + data['coord']['lat'] + "&lon=" + data['coord']['lon'] + "&appid=9a5fdca9a71d82a27d3bad8acdad7812"
 
               fetch(uvUrl).then(function(currentinfo) {
                 if (currentinfo.ok) {
@@ -81,13 +81,13 @@ var formSubmitHandler = function(event) {
             }
             })
 
-      var forecastUrl= "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=9a5fdca9a71d82a27d3bad8acdad7812";
+      var forecastUrl= "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=9a5fdca9a71d82a27d3bad8acdad7812";
       fetch(forecastUrl).then(function(response) {
         if (response.ok) {
           response.json().then(function(dataforecast) {
             date1.textContent = moment().add(1, 'days').format('L');
             var icon1El = document.createElement ("img");       
-                icon1El.src = "http://openweathermap.org/img/wn/" + dataforecast['list']["3"]['weather']["0"]['icon'] + "@2x.png"
+                icon1El.src = "https://openweathermap.org/img/wn/" + dataforecast['list']["3"]['weather']["0"]['icon'] + "@2x.png"
                 day1.appendChild(icon1El);
             temp1.textContent = "Temp: " + dataforecast['list']["3"]['main']['temp']+ " °F";
             wind1.textContent = "Wind: " + dataforecast['list']["3"]['wind']['speed']+ " MPH";
@@ -95,7 +95,7 @@ var formSubmitHandler = function(event) {
 
             date2.textContent = moment().add(2, 'days').format('L');
             var icon2El = document.createElement ("img");            
-                icon2El.src = "http://openweathermap.org/img/wn/" + dataforecast['list']["10"]['weather']["0"]['icon'] + "@2x.png"
+                icon2El.src = "https://openweathermap.org/img/wn/" + dataforecast['list']["10"]['weather']["0"]['icon'] + "@2x.png"
                 day2.appendChild(icon2El);
             temp2.textContent = "Temp: " + dataforecast['list']["10"]['main']['temp']+ " °F";
             wind2.textContent = "Wind: " + dataforecast['list']["10"]['wind']['speed']+ " MPH";
@@ -103,7 +103,7 @@ var formSubmitHandler = function(event) {
 
             date3.textContent = moment().add(3, 'days').format('L');
             var icon3El = document.createElement ("img");
-                icon3El.src = "http://openweathermap.org/img/wn/" + dataforecast['list']["18"]['weather']["0"]['icon'] + "@2x.png"
+                icon3El.src = "https://openweathermap.org/img/wn/" + dataforecast['list']["18"]['weather']["0"]['icon'] + "@2x.png"
                 day3.appendChild(icon3El);
             temp3.textContent = "Temp: " + dataforecast['list']["18"]['main']['temp']+ " °F";
             wind3.textContent = "Wind: " + dataforecast['list']["18"]['wind']['speed']+ " MPH";
@@ -111,7 +111,7 @@ var formSubmitHandler = function(event) {
 
             date4.textContent = moment().add(4, 'days').format('L');
             var icon4El = document.createElement ("img");
-                icon4El.src = "http://openweathermap.org/img/wn/" + dataforecast['list']["26"]['weather']["0"]['icon'] + "@2x.png"
+                icon4El.src = "https://openweathermap.org/img/wn/" + dataforecast['list']["26"]['weather']["0"]['icon'] + "@2x.png"
                 day4.appendChild(icon4El);
             temp4.textContent = "Temp: " + dataforecast['list']["26"]['main']['temp']+ " °F";
             wind4.textContent = "Wind: " + dataforecast['list']["26"]['wind']['speed']+ " MPH";
@@ -119,7 +119,7 @@ var formSubmitHandler = function(event) {
 
             date5.textContent = moment().add(5, 'days').format('L');
             var icon5El = document.createElement ("img");
-                icon5El.src = "http://openweathermap.org/img/wn/" + dataforecast['list']["36"]['weather']["0"]['icon'] + "@2x.png"
+                icon5El.src = "https://openweathermap.org/img/wn/" + dataforecast['list']["36"]['weather']["0"]['icon'] + "@2x.png"
                 day5.appendChild(icon5El);
             temp5.textContent = "Temp: " + dataforecast['list']["36"]['main']['temp']+ " °F";
             wind5.textContent = "Wind: " + dataforecast['list']["36"]['wind']['speed']+ " MPH";
