@@ -1,4 +1,4 @@
-var btnEl = document.querySelector(".btn");
+var formEl = document.querySelector("#form");
 var cityInputEl = document.querySelector("#city");
 var historyEl = document.querySelector("#search-history");
 var cityResultEl = document.querySelector("#city-result");
@@ -134,5 +134,5 @@ var formSubmitHandler = function(event) {
       });
     }
 
-btnEl.addEventListener("click", formSubmitHandler);
+formEl.addEventListener("submit", formSubmitHandler);
     
