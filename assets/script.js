@@ -53,7 +53,7 @@ var formSubmitHandler = function(event) {
             if (response.ok) {
               response.json().then(function(data) {
                 cityname.textContent = city;
-                today.textContent = moment().format('L');
+                today.textContent = moment().format('L, h:mm a');
 
                 
                 var iconEl = document.createElement ("img");
