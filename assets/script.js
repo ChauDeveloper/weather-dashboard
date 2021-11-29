@@ -64,7 +64,7 @@ var formSubmitHandler = function(event) {
                 wind.textContent = "Wind: " + data['wind']['speed'] + " MPH"; 
                 humidity.textContent = "Humidity: " + data['main']['humidity'] + " %";
               
-                var uvUrl = "httpss://api.openweathermap.org/data/2.5/onecall?lat=" + data['coord']['lat'] + "&lon=" + data['coord']['lon'] + "&appid=9a5fdca9a71d82a27d3bad8acdad7812"
+                var uvUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + data['coord']['lat'] + "&lon=" + data['coord']['lon'] + "&appid=9a5fdca9a71d82a27d3bad8acdad7812"
 
               fetch(uvUrl).then(function(currentinfo) {
                 if (currentinfo.ok) {
